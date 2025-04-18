@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: schedulo
+    env: java
+    plan: free
+    buildCommand: "./mvnw clean package -DskipTests"
+    startCommand: "java -jar target/*.jar"
+    envVars:
+      - key: twilio.account.sid
+        sync: false
+      - key: twilio.auth.token
+        sync: false
+      - key: twilio.phone.number
+        sync: false
